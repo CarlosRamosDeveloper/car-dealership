@@ -58,7 +58,13 @@ export class BrandsService {
     });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} brand`;
+  remove(id: string) {
+
+    let brand = this.findOne(id);
+    this.brands = this.brands.filter (brand => {
+      brand.id !== id
+    });
+
+    console.log(`Brand named ${brand.name} deleted from existence`);
   }
 }
