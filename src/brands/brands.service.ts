@@ -31,7 +31,7 @@ export class BrandsService {
   }
 
   findAll() {
-    return `This action returns all brands`;
+    return this.brands;
   }
 
   findOne(id: string) {
@@ -56,6 +56,7 @@ export class BrandsService {
 
       return brand;
     });
+    return brandDB;
   }
 
   remove(id: string) {
