@@ -42,8 +42,20 @@ export class BrandsService {
     return brand;
   }
 
-  update(id: number, updateBrandDto: UpdateBrandDto) {
-    return `This action updates a #${id} brand`;
+  update(id: string, updateBrandDto: UpdateBrandDto) {
+
+    let brandDB = this.findOne(id);
+
+    this.brands = this.brands.map( brand => {
+      if ( brand.id === id) {
+        brandDB.updatedAt = new Date().getTime();
+        brandDB = { ...brandDB, ...updateBrandDto}
+
+        return brandDB;
+      }
+
+      return brand;
+    });
   }
 
   remove(id: number) {
