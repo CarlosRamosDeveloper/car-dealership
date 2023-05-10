@@ -40,7 +40,6 @@ export class BrandsService {
     Bug conocido
     Patch no actualiza correctamente
   */
-
   update(id: string, updateBrandDto: UpdateBrandDto) {
 
     let brandDB = this.findOne(id);
