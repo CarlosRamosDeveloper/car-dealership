@@ -11,17 +11,7 @@ import { error } from 'console';
 
 @Injectable()
 export class CarsService {
-    private cars: Car[] = [
-        {id: uuid(),
-        brand: "Toyota",
-        model: "Supra"},
-        {id: uuid(),
-        brand: "Mitsubishi",
-        model: "3000GT"},
-        {id: uuid(),
-        brand: "Nissan",
-        model: "NSX"}
-    ];
+    private cars: Car[] = [];
 
     public findAll(){        
         return this.cars;
@@ -79,6 +69,10 @@ export class CarsService {
         
         console.log(`Vehículo eliminado`)
         
+    }
+
+    fillCarsWithSeedData(cars: Car[]){
+        this.cars = cars;
     }
 
 }
