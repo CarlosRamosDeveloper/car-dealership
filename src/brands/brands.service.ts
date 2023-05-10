@@ -41,6 +41,11 @@ export class BrandsService {
     }
     return brand;
   }
+  
+  /*TODO:
+    Bug conocido
+    Patch no actualiza correctamente
+  */
 
   update(id: string, updateBrandDto: UpdateBrandDto) {
 
