@@ -10,3 +10,11 @@ Populate DB
 ```
 http://127.0.0.1:3000/seed
 ```
+This command "emulates" a DB and refills it with content.
+
+
+# Start server (dev mode)
+```
+yarn start:dev
+```
+This command creates the distribution folder, wich transpiles all the ts code into js
